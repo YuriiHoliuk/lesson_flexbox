@@ -20,7 +20,32 @@ body {
   text-align: center;
 }
 
+.nav__toggler {
+  display: none;
+}
+
+.nav__toggler:checked + .nav__toggler-label::after {
+  content: "x";
+}
+
+.nav__toggler:checked ~ .nav__list {
+  display: block;
+}
+
+.nav__toggler-label {
+  display: inline-block;
+  padding: 10px;
+
+  font-size: 36px;
+  color: #fff;
+}
+
+.nav__toggler-label::after {
+  content: "=";
+}
+
 .nav__list {
+  display: none;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -58,4 +83,10 @@ body {
   color: #fff;
   background-image: url("https://mate-academy.github.io/fe-program/assets/MA_bottom.jpg");
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .nav__item {
+    display: block;
+  }
 }
